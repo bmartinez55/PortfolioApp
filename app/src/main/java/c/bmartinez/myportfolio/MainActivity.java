@@ -91,6 +91,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(this.getResources().getColor(R.color.contentBodyColor));
+            //White Mode
+            if(mode == 1)
+                window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
     }
 
