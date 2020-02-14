@@ -1,5 +1,6 @@
 package c.bmartinez.myportfolio;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -83,6 +84,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }else{
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             changeStatusBar(1,window);
+        }
+    }
+
+    public void changeStatusBar(int mode, Window window){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(this.getResources().getColor(R.color.contentBodyColor));
         }
     }
 
