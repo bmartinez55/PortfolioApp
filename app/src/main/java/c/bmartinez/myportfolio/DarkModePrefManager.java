@@ -9,7 +9,7 @@ public class DarkModePrefManager {
     Context _context;
 
     //Shared pref mode
-    int PRIVATE_MODDE = 0;
+    int PRIVATE_MODE = 0;
 
     //Shared preferences file name
     private static final String PREF_NAME = "dark-mode";
@@ -17,12 +17,16 @@ public class DarkModePrefManager {
 
     public DarkModePrefManager(Context context){
         this._context = context;
-        pref = _context.getSharedPreferences(PREF_NAME,PRIVATE_MODDE);
+        pref = _context.getSharedPreferences(PREF_NAME,PRIVATE_MODE);
         editor = pref.edit();
     }
 
     public void setDarkMode(boolean isFirstTime){
         editor.putBoolean(IS_NIGHT_MODE, true);
         editor.commit();
+    }
+
+    public boolean isNightMode() {
+        return pref.getBoolean(IS_NIGHT_MODE,true);
     }
 }
