@@ -1,6 +1,7 @@
 package c.bmartinez.myportfolio;
 
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.ViewCompat;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -22,7 +23,12 @@ public class BottomNavigationBehavior extends CoordinatorLayout.Behavior<BottomN
     }
 
     @Override
-    public boolean onNestedPreScroll(CoordinatorLayout coordinatorLayout, BottomNavigationView child, View target, int dx, int dy, int[] consumed){
+    public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, BottomNavigationView child, View directTargetChild, View target, int nestedScrollAxes){
+        return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL;
+    }
+
+    @Override
+    public void onNestedPreScroll(CoordinatorLayout coordinatorLayout, BottomNavigationView child, View target, int dx, int dy, int[] consumed){
         if(dy < 0)
             showBottomNavigationView(child);
         else if (dy > 0)
