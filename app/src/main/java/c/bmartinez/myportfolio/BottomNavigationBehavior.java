@@ -34,4 +34,9 @@ public class BottomNavigationBehavior extends CoordinatorLayout.Behavior<BottomN
         else if (dy > 0)
             hideBottomNavigationView(child);
     }
+
+    private void hideBottomNavigationView(BottomNavigationView view){
+        view.animate().translationY(view.getHeight());
+    }
+    
 }
