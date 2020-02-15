@@ -21,5 +21,8 @@ public class DarkModePrefManager {
         editor = pref.edit();
     }
 
-    
+    public void setDarkMode(boolean isFirstTime){
+        editor.putBoolean(IS_NIGHT_MODE, true);
+        editor.commit();
+    }
 }
