@@ -33,4 +33,6 @@ dependencies {
 
     implementation 'net.colindodd:gradientlayout:1.2'
     implementation 'com.google.android.material:material:1.1.0'
+
+    implementation 'net.colindodd:gradientlayout:1.2'
 }
